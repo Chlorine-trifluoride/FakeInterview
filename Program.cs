@@ -6,15 +6,15 @@ namespace FakeInterview
     {
         static void Main(string[] args)
         {
-            PrimeCalc primeCalc = new PrimeCalc(true);
+            PrimeCalc primeCalc = new PrimeCalc(false);
 
-            long a = primeCalc.GetFirstPrimeWithNDigits(10);
+            ulong a = primeCalc.GetFirstPrimeWithNDigits(10);
             Console.WriteLine($"a: {a}");
 
-            long b = primeCalc.GetFirstPrimeWithNDigits(11);
-            Console.WriteLine($"a: {b}");
+            ulong b = primeCalc.GetFirstPrimeWithNDigits(11);
+            Console.WriteLine($"b: {b}");
 
-            long result = a * b;
+            ulong result = a * b;
 
             Console.WriteLine($"Result: {a} * {b} =  {result}");
 

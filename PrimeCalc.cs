@@ -18,25 +18,25 @@ namespace FakeInterview
         /// Returns (long) the first prime with n digits
         /// This is a very slow method
         /// </summary>
-        public long GetFirstPrimeWithNDigits(int n)
+        public ulong GetFirstPrimeWithNDigits(int n)
         {
             string num = "1".PadRight(n, '0');
-            long l = long.Parse(num);
+            ulong l = ulong.Parse(num);
             l += 1;
 
-            for (; l <= long.MaxValue ; l+=2)
+            for (; l <= ulong.MaxValue ; l+=2)
             {
                 if (IsPrimePrintTime(l))
                     return l;
             }
 
-            return -1;
+            return 0;
         }
 
         /// <summary>
         /// Returns (bool) if the input is a prime number or not and prints the time to calculate in ms
         /// </summary>
-        private bool IsPrimePrintTime(long input)
+        private bool IsPrimePrintTime(ulong input)
         {
             Stopwatch sw = new Stopwatch();
             sw.Start();
@@ -52,11 +52,9 @@ namespace FakeInterview
         /// <summary>
         /// Returns (bool) if the input is a prime number or not
         /// </summary>
-        public bool IsPrime(long input)
+        public bool IsPrime(ulong input)
         {
-            long l = 1;
-
-            for (; l < input; l+=2)
+            for (ulong l = 1; l < input; l+=2)
             {
                 if (input % l == 0 && l != 1)
                 {
